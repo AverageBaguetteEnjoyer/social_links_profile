@@ -1,0 +1,133 @@
+:root {
+    --bg-body: oklch(19.125% 0.00002 271.152);
+    --bg-card: oklch(23.929% 0.00003 271.152);
+    --bg-link: oklch(32.109% 0.00004 271.152);
+    --bg-link-hover: oklch(91.062% 0.21669 124.045);
+    --clr-link-hover-text: oklch(32.109% 0.00004 271.152);
+    --clr-font-primary: oklch(100% 0.00011 271.152);
+    --clr-font-secondary: oklch(91.062% 0.21669 124.045);
+    --font-family: "Inter", sans-serif;
+    --animation-speed: .35s;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-body);
+    font-family: var(--font-family);
+}
+
+main {
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+}
+
+.card {
+    width: 24rem;
+    padding: 2.5rem;
+    background: var(--bg-card);
+    color: var(--clr-font-primary);
+    font-size: .875rem;
+    line-height: 1.5;
+    text-align: center;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.card__profile-pic {
+    width: 5.5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.card__header h1 {
+    font-size: 1.5rem;
+}
+
+.card__header p {
+    margin-top: .25rem;
+    color: var(--clr-font-secondary);
+    font-weight: 700;
+}
+
+.card__social-links {
+    width: 100%;
+}
+
+.card__social-links ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card__social-links a {
+    display: block;
+    padding: .75rem;
+    background: var(--bg-link);
+    color: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card__social-links a span {
+    display: block;
+    position: relative;
+    transition: transform var(--animation-speed);
+}
+
+.card__social-links a span::after {
+    content: attr(data-text);
+    color: var(--clr-link-hover-text);
+    position: absolute;
+    inset: 0;
+    transform: translateX(105%);
+}
+
+.card__social-links a:is(:hover, :focus-visible) span {
+    transform: translateX(-105%);
+}
+
+.card__social-links a::before {
+    content: '';
+    background: var(--bg-link-hover);
+    transform: translateX(-105%);
+    position: absolute;
+    inset: 0;
+    transition: transform var(--animation-speed);
+}
+
+.card__social-links a:is(:hover, :focus-visible)::before {
+    transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --animation-speed: 0s;
+    }
+}
+
+@media (max-width: 24.75rem) {
+    body {
+        padding: 1.5rem;
+    }
+
+    .card {
+        width: 100%;
+        padding: 1.5rem;
+    }
+}
