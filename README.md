@@ -22,8 +22,8 @@ Users should be able to:
 
 ## Links
 
-- Solution URL: https://example.com
-- Live Site URL: https://example.com
+- Solution URL: https://www.frontendmentor.io/solutions/social-links-profile-505g7Bh3Za
+- Live Site URL: https://sociallinksprofile-abe.netlify.app
 
 ## Author
 
