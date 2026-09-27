@@ -27,7 +27,7 @@ Users should be able to:
 
 ## Author
 
-find me on other platforms!
+Find me on other platforms!
 
 - Frontend Mentor: [@AverageBaguetteEnjoyer](https://www.frontendmentor.io/profile/AverageBaguetteEnjoyer)
 - CodeWars: [AverageBaguetteEnjoyer](https://www.codewars.com/users/AverageBaguetteEnjoyer)
